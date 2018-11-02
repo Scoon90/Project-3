@@ -5,32 +5,29 @@
    //var color= document.getElementById('colorPicker').value;
 //}
 
+
 function makeGrid(gridHeight , gridWidth) {
 // create table
-  var convas = document.getElementById('pixelCanvas');
+  var convas = document.getElementById('sizePicker');
   var table = document.querySelectorAll('.pixelCanvas');
-  var body = "";
   var gridHeight = document.getElementById('inputHeight').value;
   var gridWidth = document.getElementById('inputWidth').value;
-  var tr =document.getElementsByClassName('tr'); 
-  var td =document.creteElement('td');
-  for (var x=0; x<inputHeight; x++){ 
-    sizePicker.appendChild(tr);
-    for (var y=0; y<inputWidth; y++){
-      sizePicker.appendChild(td);
+  convas.appendChild(table);
+  table = "";
+  
+  for (var x=0; x<=gridHeight; x++){ 
+    var tr =document.createElement('tr'); 
+    table.appendChild(tr);
+    for (var y=0; y<=gridWidth; y++){
+      var td =document.creteElement('td');
+      tr.appendChild(td);
     }
-    body = tr[x]+ td[y];
+    
   }
   
-    
-    //addClickEventToCells();
+  document.getElementById("pixelCanvas").addEventListener("click", function(e){
+    e= document.getElementById('pixelCanvas').innerHTML})
 }
-
-document.getElementById("pixelCanvas").addEventListener("click", function(e){
-e= document.getElementById('pixelCanvas').innerHTML;
-table.innerHTML = body;})
-
-makeGrid();
 
 //sizePicker.appendChild(tr);
 //table.appendChild(sizePicker);
