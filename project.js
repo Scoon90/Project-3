@@ -1,42 +1,42 @@
-//var sizePicker = document.getElementById('sizePicker');
-//var color =document.getElementById('colorPicker');
-//color.querySelector('color');
-//function getColor(colorPicker){
-   //var color= document.getElementById('colorPicker').value;
-//}
+function makeGride(){
+  console.log("makeGrid is running!");
+  var table = document.getElementById("pixelCanvas");
+  var row = document.createElement("tr");
+  var thight = document.getElementById("inputHeight").value;
+  var twidth = document.getElementById("inputWidth").value;
+  CellH = document.createElement("td");
 
+  table.innerHTML = '';
 
-function makeGrid(gridHeight , gridWidth) {
-// create table
-  var convas = document.getElementById('sizePicker');
-  var table = document.querySelectorAll('.pixelCanvas');
-  var gridHeight = document.getElementById('inputHeight').value;
-  var gridWidth = document.getElementById('inputWidth').value;
-  convas.appendChild(table);
-  table = "";
-  
-  for (var x=0; x<=gridHeight; x++){ 
-    var tr =document.createElement('tr'); 
-    table.appendChild(tr);
-    for (var y=0; y<=gridWidth; y++){
-      var td =document.creteElement('td');
-      tr.appendChild(td);
+ 
+      table.appendChild(row)
+
+    for (let x = 0; x < thight; x++) {
+      
+    for (let y = 0; y < twidth; y++) {
+      row.appendChild(CellH);
+      //alert("W"+y)
     }
-    
+    alert("H"+x)
+
+
+    }
+   
   }
-  
-  document.getElementById("pixelCanvas").addEventListener("click", function(e){
-    e= document.getElementById('pixelCanvas').innerHTML})
+
+  document.addEventListener("submit", tValue);
+  function tValue(event){
+  event.preventDefault()
+  makeGride();
+  clearGride();
+  }
+
+function clearGride(){
+  document.remove (table);
 }
 
-//sizePicker.appendChild(tr);
-//table.appendChild(sizePicker);
-//sizePicker.addEventListener('click', function(s){
-//console.log(s.target);
-//console.log(s);
-//})
-
-//console.log(tr[i].td[j].innerHTML);
-//tr[i].td[j].addEventListener('click', function(){
-        //console.log('click');
-//})
+var color =document.getElementById('colorPicker');
+color.querySelector('color');
+function getColor(colorPicker){
+   color= document.getElementById('colorPicker').value;
+}
