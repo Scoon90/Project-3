@@ -21,12 +21,14 @@ function makeGrid(){
    var row = document.createElement("tr");
    for (var y =1 ; y<= getwidth ; y++){
      var colume = document.createElement("td");
-	 row.appendChild(colume);
-	 colume.addEventListener("click", selectcolor);
-        function selectcolor(event){
-        //event.preventDefault();
-        var color = document.getElementById("colorPicker").value;
-        colume.style.background = color;})
+     row.appendChild(colume);
+	   // select the colour for cell
+     colume.addEventListener("click", selectcolor);
+     function selectcolor(event){
+     let color = document.getElementById("colorPicker").value;
+     event.target.style.backgroundColor=color;   
+   }
+	 
 	}
 	drawtable.appendChild(row);
   }
